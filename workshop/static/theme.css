@@ -1,0 +1,21 @@
+table, td {
+    border-collapse: collapse;
+    border: 1px solid gray;
+    padding: 10px;
+    width: 75%;
+    margin: auto;
+}
+
+tr:nth-of-type(2n+1) {
+    background-color: lightgray;
+}
+
+.tweet {
+    font-style: italic;
+    font-size: 18pt;
+}
+
+.comment {
+    font-style: italic;
+    font-size: 14pt;
+}

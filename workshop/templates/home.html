@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Twitter | Home{% endblock %}
+{% block content %}
+    <p><a href="/add-tweet">Dodaj nowy wpis</a></p>
+    <table>
+        <tbody>
+            {% for tweet in tweets %}
+            <tr>
+                <td>
+                        <span class="tweet">{{ tweet.content }}</span>
+                        <p><b>{{ tweet.user }}</b>, {{ tweet.creation_date }}</p>
+                        <a href="/comments/{{ tweet.id }}">Komentarze</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

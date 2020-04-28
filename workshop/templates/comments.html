@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Twitter | Comments{% endblock %}
+{% block content %}
+
+    <hr>
+
+    <span class="tweet">{{ tweet.content }}</span>
+    <p><b>{{ tweet.user }}</b>, {{ tweet.creation_date }}</p>
+
+    <hr>
+    <h2>Komentarze</h2>
+
+    <table>
+        {% for comment in comments %}
+            <tr>
+                <td>
+                    <p>{{ comment.author.username }}:</p>
+                    <p class="comment">{{ comment.content }}</p>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

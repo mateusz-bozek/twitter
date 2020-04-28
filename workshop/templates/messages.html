@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Twitter | Messages{% endblock %}
+{% block content %}
+    <h2>Moje wiadomości</h2>
+    <h3>Witaj, <a href="/user">{{ request.user.username }}</a></h3>
+    <hr>
+    <h3>Odebrane</h3>
+    {% for message in received_by_me %}
+        {% if message.seen %}
+            <p style="color:gray">{{ message.content }}</p>
+        {% else %}
+            <p>{{ message.content }}</p>
+        {% endif %}
+    {% endfor %}
+    <hr>
+    <h3>Wysłane</h3>
+    {% for message in sent_by_me %}
+        <p>{{ message.content }}</p>
+    {% endfor %}
+{% endblock %}

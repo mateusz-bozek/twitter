@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Twitter | Add Tweet{% endblock %}
+{% block content %}
+    <h3>Dodaj nowy wpis</h3>
+    <form action="#" method="POST">
+        {%  csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Dodaj">
+    </form>
+{% endblock %}
